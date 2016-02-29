@@ -1,0 +1,13 @@
+XDC_open() {
+    GEL_ProjectLoad("E:/Studio/TICCS/mcip_master/Debug/configPkg/package/configPkg.pjt");
+    GEL_ProjectLoad("E:/Studio/TICCS/mcip_master/Debug/configPkg/package/cfg/mcip_master_xe66.pjt");
+    GEL_ProjectSetActive("E:/Studio/TICCS/mcip_master/Debug/configPkg/package/cfg/mcip_master_xe66.pjt");
+}
+XDC_close() {
+    GEL_ProjectClose("E:/Studio/TICCS/mcip_master/Debug/configPkg/package/configPkg.pjt");
+    GEL_ProjectClose("E:/Studio/TICCS/mcip_master/Debug/configPkg/package/cfg/mcip_master_xe66.pjt");
+}
+menuitem "XDC Package"
+hotmenu load_executable () { GEL_Load("E:/Studio/TICCS/mcip_master/Debug/configPkg/mcip_master.xe66"); }
+hotmenu open_project () { XDC_open(); }
+hotmenu close_project () { XDC_close(); }

@@ -1,0 +1,1 @@
+"./mcip_master_main.obj" "./system/platform_osal.obj" "./system/resourcemgr.obj" -l"configPkg/linker.cmd" -l"libc.a" -l"imglib.ae66" 
