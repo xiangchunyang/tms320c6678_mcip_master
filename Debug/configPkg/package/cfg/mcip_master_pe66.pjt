@@ -20,7 +20,7 @@ ExcludeFromBuild=true
 ;  directories.
 ;
 ["Compiler" Settings: "Executable"]
-Options=-i"D:/Program/Texas/MCSDK/ipc_1_24_03_32/packages" -i"D:/Program/Texas/MCSDK/ndk_2_24_03_35/packages" -i"D:/Program/Texas/MCSDK/bios_6_33_06_50/packages" -i"D:/Program/Texas/MCSDK/mcsdk_2_01_02_06" -i"D:/Program/Texas/MCSDK/imglib_c66x_3_1_1_0/packages" -i"D:/Program/Texas/MCSDK/pdk_C6678_1_1_2_6/packages" -i"D:/Program/Texas/MCSDK/uia_2_00_03_43/packages" -i"D:/Program/Texas/MCSDK/mcsdk_2_01_02_06/demos" -i"D:/Program/Texas/CCSv6.1.2/ccsv6/ccs_base" -i"D:/Program/Texas/MCSDK/xdctools_3_23_04_60/packages" -i"E:\Studio\TICCS\mcip_master\Debug" 
+Options=-i"D:/Program/Texas/MCSDK/ipc_1_24_03_32/packages" -i"D:/Program/Texas/MCSDK/ndk_2_24_03_35/packages" -i"D:/Program/Texas/MCSDK/bios_6_33_06_50/packages" -i"D:/Program/Texas/MCSDK/mcsdk_2_01_02_06" -i"D:/Program/Texas/MCSDK/imglib_c66x_3_1_1_0/packages" -i"D:/Program/Texas/MCSDK/pdk_C6678_1_1_2_6/packages" -i"D:/Program/Texas/MCSDK/uia_2_00_05_50/packages" -i"D:/Program/Texas/MCSDK/mcsdk_2_01_02_06/demos" -i"D:/Program/Texas/CCSv6.1.2/ccsv6/ccs_base" -i"D:/Program/Texas/MCSDK/xdctools_3_23_04_60/packages" -i"E:\Studio\TICCS\mcip_master\Debug" 
 
 [External Makefile]
 ExtMakefile=../../package.bld

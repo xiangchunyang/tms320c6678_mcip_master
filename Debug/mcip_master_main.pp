@@ -71,13 +71,13 @@ mcip_master_main.obj: D:\Program\Texas\MCSDK\ndk_2_24_03_35\packages\ti\ndk\inc\
 mcip_master_main.obj: D:/Program/Texas/MCSDK/ndk_2_24_03_35/packages/ti/ndk/inc/tools/console.h
 mcip_master_main.obj: D:/Program/Texas/CCSv6.1.2/ccsv6/tools/compiler/ti-cgt-c6000_8.0.3/include/stdlib.h
 mcip_master_main.obj: D:/Program/Texas/MCSDK/ndk_2_24_03_35/packages/ti/ndk/inc/tools/servers.h
+mcip_master_main.obj: D:/Program/Texas/MCSDK/xdctools_3_23_04_60/packages/xdc/runtime/System.h
 mcip_master_main.obj: D:/Program/Texas/MCSDK/xdctools_3_23_04_60/packages/xdc/std.h
 mcip_master_main.obj: D:/Program/Texas/CCSv6.1.2/ccsv6/tools/compiler/ti-cgt-c6000_8.0.3/include/stdarg.h
 mcip_master_main.obj: D:/Program/Texas/CCSv6.1.2/ccsv6/tools/compiler/ti-cgt-c6000_8.0.3/include/stddef.h
 mcip_master_main.obj: D:/Program/Texas/MCSDK/xdctools_3_23_04_60/packages/ti/targets/elf/std.h
 mcip_master_main.obj: D:\Program\Texas\MCSDK\xdctools_3_23_04_60\packages\ti\targets\elf\C66.h
 mcip_master_main.obj: D:/Program/Texas/MCSDK/xdctools_3_23_04_60/packages/ti/targets/std.h
-mcip_master_main.obj: D:/Program/Texas/MCSDK/xdctools_3_23_04_60/packages/xdc/runtime/System.h
 mcip_master_main.obj: D:/Program/Texas/MCSDK/xdctools_3_23_04_60/packages/xdc/runtime/xdc.h
 mcip_master_main.obj: D:/Program/Texas/MCSDK/xdctools_3_23_04_60/packages/xdc/runtime/Types.h
 mcip_master_main.obj: D:/Program/Texas/MCSDK/xdctools_3_23_04_60/packages/xdc/runtime/Types__prologue.h
@@ -151,10 +151,9 @@ mcip_master_main.obj: D:/Program/Texas/MCSDK/xdctools_3_23_04_60/packages/xdc/ru
 mcip_master_main.obj: D:/Program/Texas/MCSDK/xdctools_3_23_04_60/packages/xdc/runtime/Memory.h
 mcip_master_main.obj: D:/Program/Texas/MCSDK/xdctools_3_23_04_60/packages/xdc/runtime/package/Memory_HeapProxy.h
 mcip_master_main.obj: D:/Program/Texas/MCSDK/ipc_1_24_03_32/packages/ti/ipc/Ipc.h
-mcip_master_main.obj: D:/Program/Texas/MCSDK/ipc_1_24_03_32/packages/ti/ipc/MessageQ.h
-mcip_master_main.obj: D:/Program/Texas/MCSDK/ipc_1_24_03_32/packages/ti/ipc/MultiProc.h
 mcip_master_main.obj: D:/Program/Texas/MCSDK/ipc_1_24_03_32/packages/ti/ipc/HeapBufMP.h
 mcip_master_main.obj: D:/Program/Texas/MCSDK/ipc_1_24_03_32/packages/ti/ipc/GateMP.h
+mcip_master_main.obj: D:/Program/Texas/MCSDK/ipc_1_24_03_32/packages/ti/ipc/MultiProc.h
 mcip_master_main.obj: D:/Program/Texas/MCSDK/bios_6_33_06_50/packages/ti/sysbios/BIOS.h
 mcip_master_main.obj: D:/Program/Texas/MCSDK/xdctools_3_23_04_60/packages/xdc/runtime/Types.h
 mcip_master_main.obj: D:/Program/Texas/MCSDK/bios_6_33_06_50/packages/ti/sysbios/BIOS__prologue.h
@@ -304,4 +303,6 @@ mcip_master_main.obj: D:/Program/Texas/MCSDK/pdk_C6678_1_1_2_6/packages/ti/drv/q
 mcip_master_main.obj: D:/Program/Texas/MCSDK/pdk_C6678_1_1_2_6/packages/ti/drv/pa/pa.h
 mcip_master_main.obj: D:/Program/Texas/CCSv6.1.2/ccsv6/tools/compiler/ti-cgt-c6000_8.0.3/include/stdlib.h
 mcip_master_main.obj: D:/Program/Texas/MCSDK/pdk_C6678_1_1_2_6/packages/ti/drv/pa/paver.h
+mcip_master_main.obj: ..\mcip_ipc.h
 mcip_master_main.obj: ..\mcip_common.h
+mcip_master_main.obj: D:/Program/Texas/MCSDK/ipc_1_24_03_32/packages/ti/ipc/MessageQ.h

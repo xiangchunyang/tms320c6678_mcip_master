@@ -10,6 +10,7 @@ GEN_OPTS__FLAG := --cmd_file="configPkg/compiler.opt"
 GEN_CMDS__FLAG := -l"configPkg/linker.cmd"
 
 ORDERED_OBJS += \
+"./mcip_imgproc.obj" \
 "./mcip_master_main.obj" \
 "./system/platform_osal.obj" \
 "./system/resourcemgr.obj" \
@@ -158,8 +159,8 @@ mcip_master.hex: $(EXE_OUTPUTS)
 clean:
 	-$(RM) $(GEN_MISC_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)$(GEN_FILES__QUOTED)$(BIN_OUTPUTS__QUOTED)$(GEN_OPTS__QUOTED)$(GEN_CMDS__QUOTED)
 	-$(RMDIR) $(GEN_MISC_DIRS__QUOTED)
-	-$(RM) "mcip_master_main.pp" "system\platform_osal.pp" "system\resourcemgr.pp" 
-	-$(RM) "mcip_master_main.obj" "system\platform_osal.obj" "system\resourcemgr.obj" 
+	-$(RM) "mcip_imgproc.pp" "mcip_master_main.pp" "system\platform_osal.pp" "system\resourcemgr.pp" 
+	-$(RM) "mcip_imgproc.obj" "mcip_master_main.obj" "system\platform_osal.obj" "system\resourcemgr.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

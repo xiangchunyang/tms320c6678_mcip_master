@@ -10,12 +10,10 @@
 #include <ti/ndk/inc/tools/console.h>
 #include <ti/ndk/inc/tools/servers.h>
 
-#include <xdc/std.h>
 #include <xdc/runtime/System.h>
 #include <xdc/runtime/IHeap.h>
 #include <xdc/runtime/Memory.h>
 #include <ti/ipc/Ipc.h>
-#include <ti/ipc/MessageQ.h>
 #include <ti/ipc/HeapBufMP.h>
 #include <ti/ipc/MultiProc.h>
 #include <ti/sysbios/BIOS.h>
@@ -25,9 +23,8 @@
 #include <ti/platform/platform.h>
 #include <ti/platform/resource_mgr.h>
 
+#include "mcip_ipc.h"
 #include "mcip_common.h"
-
-// Network
 
 char *PCStaticIP = "192.168.2.123";
 char *EVMStaticIP = "192.168.2.100";
@@ -48,6 +45,13 @@ int tcp_listen = 1;
 
 #define DDR_SHARED_HEAP (HeapMem_Handle_to_xdc_runtime_IHeap(systemHeapMaster))
 
+const int DDR_HEAP_SIZE   =  240*1024*1024; // < 256M
+const int MAX_BUFF_SIZE   =   64*1024*1024; // < 1/4 of ddr_heap
+const int DATA_BLOCK_SIZE =   32*1024*1024; // < 1/6 of ddr_heap
+
+const int IMG_INFO_SIZE = sizeof(img_info_t);
+const int PROC_MSG_SIZE = sizeof(proc_msg_t);
+
 byte* recvBuff  = NULL;
 byte* sendBuff  = NULL;
 int   buffSize  = 0;
@@ -64,8 +68,6 @@ void NetStart(void);
 
 int recvData(SOCKET sock,byte* pBuf,img_info_t* pInfo);
 int sendData(SOCKET sock,byte* pBuf,img_info_t* pInfo);
-
-void Slave0_Task(proc_msg_t* p_msg);
 
 /////////////////////////////////////
 
@@ -219,7 +221,7 @@ void NetStart(void)
 	            MessageQ_put(queueId,(MessageQ_MsgHeader*)(pMessageList[i]));
 			}
 
-			Slave0_Task(pMessageList[0]);
+			image_proc(pMessageList[0],0,NUM_OF_CORES);
 
 			for(i=1;i<NUM_OF_CORES;++i)
 			{
@@ -376,30 +378,6 @@ void MemoryFree(void)
 	if(sendBuff != NULL)
 	{
 		Memory_free(DDR_SHARED_HEAP,sendBuff,buffSize);
-	}
-}
-
-void Slave0_Task(proc_msg_t* p_msg)
-{
-	int width = p_msg->info.width;
-	int height = p_msg->info.height;
-
-	int hx = height/NUM_OF_CORES;
-
-	int h0 = 0;
-	int h1 = height - hx*(NUM_OF_CORES-1);
-
-	byte* src = p_msg->memr.recvBuf;
-	byte* dst = p_msg->memr.sendBuf;
-
-	int i,v;
-	int k0 = h0*width;
-	int k1 = h1*width;
-
-	for(i=k0;i<k1;++i)
-	{
-		v=src[i]+64;
-		dst[i]=v>255?(byte)255:(byte)v;
 	}
 }
 

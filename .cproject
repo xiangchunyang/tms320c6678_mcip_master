@@ -25,7 +25,7 @@
 								<listOptionValue builtIn="false" value="RUNTIME_SUPPORT_LIBRARY=libc.a"/>
 								<listOptionValue builtIn="false" value="RTSC_MBS_VERSION=2.2.0"/>
 								<listOptionValue builtIn="false" value="XDC_VERSION=3.23.4.60"/>
-								<listOptionValue builtIn="false" value="RTSC_PRODUCTS=ti.imglib.c66x:3.1.1.0;com.ti.rtsc.IPC:1.24.3.32;com.ti.biosmcsdk.mcsdk:2.1.2.6;com.ti.biosmcsdk.pdk.C6678L:1.1.2.6;com.ti.rtsc.NDK:2.24.3.35;com.ti.rtsc.SYSBIOS:6.33.6.50;com.ti.uia:2.0.3.43;"/>
+								<listOptionValue builtIn="false" value="RTSC_PRODUCTS=ti.imglib.c66x:3.1.1.0;com.ti.rtsc.IPC:1.24.3.32;com.ti.biosmcsdk.mcsdk:2.1.2.6;com.ti.biosmcsdk.pdk.C6678L:1.1.2.6;com.ti.rtsc.NDK:2.24.3.35;com.ti.rtsc.SYSBIOS:6.33.6.50;com.ti.uia:2.0.5.50;"/>
 								<listOptionValue builtIn="false" value="INACTIVE_REPOS="/>
 								<listOptionValue builtIn="false" value="OUTPUT_TYPE=executable"/>
 								<listOptionValue builtIn="false" value="LINK_ORDER="/>

@@ -7,12 +7,15 @@ CFG_SRCS += \
 ../mcip_master.cfg 
 
 C_SRCS += \
+../mcip_imgproc.c \
 ../mcip_master_main.c 
 
 OBJS += \
+./mcip_imgproc.obj \
 ./mcip_master_main.obj 
 
 C_DEPS += \
+./mcip_imgproc.pp \
 ./mcip_master_main.pp 
 
 GEN_MISC_DIRS += \
@@ -36,12 +39,15 @@ GEN_MISC_DIRS__QUOTED += \
 "configPkg\" 
 
 C_DEPS__QUOTED += \
+"mcip_imgproc.pp" \
 "mcip_master_main.pp" 
 
 OBJS__QUOTED += \
+"mcip_imgproc.obj" \
 "mcip_master_main.obj" 
 
 C_SRCS__QUOTED += \
+"../mcip_imgproc.c" \
 "../mcip_master_main.c" 
 
 
