@@ -9,3 +9,6 @@ mcip_imgproc.obj: D:/Program/Texas/MCSDK/xdctools_3_23_04_60/packages/ti/targets
 mcip_imgproc.obj: D:/Program/Texas/CCSv6.1.2/ccsv6/tools/compiler/ti-cgt-c6000_8.0.3/include/stdint.h
 mcip_imgproc.obj: D:/Program/Texas/MCSDK/ipc_1_24_03_32/packages/ti/ipc/MessageQ.h
 mcip_imgproc.obj: D:/Program/Texas/MCSDK/ipc_1_24_03_32/packages/ti/ipc/MultiProc.h
+mcip_imgproc.obj: D:/Program/Texas/CCSv6.1.2/ccsv6/tools/compiler/ti-cgt-c6000_8.0.3/include/stdlib.h
+mcip_imgproc.obj: D:/Program/Texas/CCSv6.1.2/ccsv6/tools/compiler/ti-cgt-c6000_8.0.3/include/linkage.h
+mcip_imgproc.obj: D:/Program/Texas/CCSv6.1.2/ccsv6/tools/compiler/ti-cgt-c6000_8.0.3/include/string.h

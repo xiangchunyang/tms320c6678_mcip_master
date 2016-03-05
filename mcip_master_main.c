@@ -35,6 +35,8 @@ char *DomainName = "TI-C6678-DSP"; // Not used when using DHCP
 const int TCP_LISTEN_PORT = 56789;
 const int MAX_CONNECTION  = 1;
 
+const int mcId = 0;
+
 int tcp_listen = 1;
 
 #define S_RECV_OK    1
@@ -221,7 +223,7 @@ void NetStart(void)
 	            MessageQ_put(queueId,(MessageQ_MsgHeader*)(pMessageList[i]));
 			}
 
-			image_proc(pMessageList[0],0,NUM_OF_CORES);
+			ImageNegative(pMessageList[mcId],mcId,NUM_OF_CORES);
 
 			for(i=1;i<NUM_OF_CORES;++i)
 			{
