@@ -213,17 +213,19 @@ void NetStart(void)
 				break;
 			}
 
-			memcpy(&(pMessageList[0]->info),&imgInfo,IMG_INFO_SIZE);
+			memcpy(&(pMessageList[0]->imgInfo),&imgInfo,IMG_INFO_SIZE);
 
 			for(i=1;i<NUM_OF_CORES;++i)
 			{
-				memcpy(&(pMessageList[i]->info),&imgInfo,IMG_INFO_SIZE);
+				memcpy(&(pMessageList[i]->imgInfo),&imgInfo,IMG_INFO_SIZE);
 
 				MessageQ_open(SLAVE_MSGQ_NAMES[i],&queueId);
 	            MessageQ_put(queueId,(MessageQ_MsgHeader*)(pMessageList[i]));
 			}
 
-			ImageNegative(pMessageList[mcId],mcId,NUM_OF_CORES);
+			//ImageNegative(pMessageList[mcId],mcId,NUM_OF_CORES);
+
+			ImageBW(sendBuff,recvBuff,imgInfo.width,imgInfo.height);
 
 			for(i=1;i<NUM_OF_CORES;++i)
 			{
@@ -343,8 +345,8 @@ void MemoryAlloc(void)
 	{
 		pMessageList[i] = (proc_msg_t*)MessageQ_alloc(MCIP_HEAP_ID,PROC_MSG_SIZE);
 
-		pMessageList[i]->memr.recvBuf = recvBuff;
-		pMessageList[i]->memr.sendBuf = sendBuff;
+		//pMessageList[i]->memr.recvBuf = recvBuff;
+		//pMessageList[i]->memr.sendBuf = sendBuff;
 	}
 
 	heapHandle = NULL;

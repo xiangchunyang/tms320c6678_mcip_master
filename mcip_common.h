@@ -37,18 +37,15 @@ typedef struct s_img_info_t
 //       |             |          |             |
 //       +-------------+          +-------------+
 
-typedef struct s_memr_ptr_t
-{
-	byte*  recvBuf;
-	byte*  sendBuf;
-}memr_ptr_t;
-
 typedef struct s_proc_msg_t
 {
     MessageQ_MsgHeader header;
-    img_info_t         info;
-    memr_ptr_t         memr;
+    img_info_t         imgInfo;
+    byte*              imgSrc;
+    byte*              imgDst;
 } proc_msg_t;
+
+void ImageBW(byte* dst, byte* src,int width,int height);
 
 void ImageNegative(proc_msg_t* pMsg, int coreId, int numCores);
 

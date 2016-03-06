@@ -6,34 +6,50 @@ const int NGRAY = 256;
 const byte b0 = (byte)0;
 const byte bx = (byte)255;
 
+void ImageBW(byte* dst, byte* src,int width,int height)
+{
+	int size = width*height;
+	byte thresh = 32;
+	int window = 3;
+
+	byte* grad=(byte*)malloc(size);
+
+	CalcGradient(grad, src, width, height);
+	GradientFilter2(src, grad, size);
+
+	free(grad);
+
+	int* hist = (int*)malloc(sizeof(int)*NGRAY);
+	int* hist_s = (int*)malloc(sizeof(int)*NGRAY);
+
+	CalcHist(hist, src, size);
+
+	HistSmoothing(hist_s, hist, window);
+
+	free(hist);
+
+	thresh = (byte)FindBestThresh(hist_s, window);
+
+	free(hist_s);
+
+	ImageThresholding(dst, src, size, thresh);
+}
+
 void ImageNegative(proc_msg_t* pMsg, int coreId, int numCores)
 {
 	//
-	byte* src = pMsg->memr.recvBuf;
-	byte* dst = pMsg->memr.sendBuf;
+	//byte* src = pMsg->imgSrc;
+	//byte* dst = pMsg->imgDst;
 
-	int width  = pMsg->info.width;
-	int height = pMsg->info.height;
-
-	int hx = height/numCores;
-
-	int h0 = hx*coreId;
-	int h1 = h0 + hx;
-
-	if(coreId == numCores-1)
-	{
-		h1 = height;
-	}
-
-	int i;
-	int k0 = h0*width;
-	int k1 = h1*width;
-
-	for(i=k0;i<k1;++i)
-	{
-		dst[i] = (byte)(255 - src[i]);
-	}
+	//int width  = pMsg->imgInfo.width;
+	//int height = pMsg->imgInfo.height;
 }
+
+// calc gradient
+// gradient filtering
+// calc histgram
+// histgram smoothing
+// find best threshold
 
 void CalcHist(int* hist, byte* imgData, int imgSize)
 {
