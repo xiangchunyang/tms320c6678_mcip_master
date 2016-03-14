@@ -249,7 +249,8 @@ void NetStart(void)
 
 	shutdown(serverSock,SHUT_RDWR);
 
-	fdCloseSession(TaskSelf());
+	//fdCloseSession(TaskSelf());
+	TaskBlock(TaskSelf());
 }
 
 int recvData(SOCKET sock,byte* pBuf,img_info_t* pInfo)
