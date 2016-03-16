@@ -223,8 +223,6 @@ void NetStart(void)
 	            MessageQ_put(queueId,(MessageQ_MsgHeader*)(pMessageList[i]));
 			}
 
-			//ImageNegative(pMessageList[mcId],mcId,NUM_OF_CORES);
-
 			ImageBW(sendBuff,recvBuff,imgInfo.width,imgInfo.height);
 
 			for(i=1;i<NUM_OF_CORES;++i)

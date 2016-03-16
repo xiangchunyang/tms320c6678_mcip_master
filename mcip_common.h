@@ -47,8 +47,6 @@ typedef struct s_proc_msg_t
 
 void ImageBW(byte* dst, byte* src,int width,int height);
 
-void ImageNegative(proc_msg_t* pMsg, int coreId, int numCores);
-
 void CalcHist(int* hist, byte* imgData, int imgSize);
 
 void HistSmoothing(int* dst_hist, int* src_hist, int window);

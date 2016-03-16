@@ -6,6 +6,11 @@ const int NGRAY = 256;
 const byte b0 = (byte)0;
 const byte bx = (byte)255;
 
+void AreaFilter(byte* dst,byte* src,int width,int height)
+{
+	//
+}
+
 void ImageBW(byte* dst, byte* src,int width,int height)
 {
 	int size = width*height;
@@ -33,16 +38,6 @@ void ImageBW(byte* dst, byte* src,int width,int height)
 	free(hist_s);
 
 	ImageThresholding(dst, src, size, thresh);
-}
-
-void ImageNegative(proc_msg_t* pMsg, int coreId, int numCores)
-{
-	//
-	//byte* src = pMsg->imgSrc;
-	//byte* dst = pMsg->imgDst;
-
-	//int width  = pMsg->imgInfo.width;
-	//int height = pMsg->imgInfo.height;
 }
 
 // calc gradient
