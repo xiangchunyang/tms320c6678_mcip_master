@@ -223,7 +223,7 @@ void NetStart(void)
 	            MessageQ_put(queueId,(MessageQ_MsgHeader*)(pMessageList[i]));
 			}
 
-			ImageBW(sendBuff,recvBuff,imgInfo.width,imgInfo.height);
+			ObjectDetection(sendBuff,recvBuff,imgInfo.width,imgInfo.height);
 
 			for(i=1;i<NUM_OF_CORES;++i)
 			{
@@ -344,8 +344,8 @@ void MemoryAlloc(void)
 	{
 		pMessageList[i] = (proc_msg_t*)MessageQ_alloc(MCIP_HEAP_ID,PROC_MSG_SIZE);
 
-		//pMessageList[i]->memr.recvBuf = recvBuff;
-		//pMessageList[i]->memr.sendBuf = sendBuff;
+		pMessageList[i]->imgSrc = recvBuff;
+		pMessageList[i]->imgDst = sendBuff;
 	}
 
 	heapHandle = NULL;
